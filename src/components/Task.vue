@@ -28,7 +28,7 @@ import { ref } from 'vue';
     <div>
         <h2 class="text-green-600 p-4 text-2xl">Task List </h2>
         <Ul>
-            <li class="" v-for="(task,index) in tasks" :key="index">{{ task.name }} - {{ task.time }} minutes
+            <li class="mb-5" v-for="(task,index) in tasks" :key="index">{{ task.name }} - {{ task.time }} minutes
             <button  @click="removeTask(index)" class="text-white bg-blue-400 hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ml-5 mr-2" type="button"> Remove</button>
             
             </li>
