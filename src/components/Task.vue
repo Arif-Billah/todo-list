@@ -9,18 +9,6 @@ import { ref } from 'vue';
  function removeTask(index){
     tasks.value.splice(index,1);
  }
-//  const isAddTaskPopupVisible = ref(true);
-
-//  const showAddTaskPopup = () => {
-//       isAddTaskPopupVisible.value = true;
-//     };
-    // function showPop(){
-    //     const inputVal = prompt();
-    //     tasks.value.push({
-    //       name: inputVal,
-    //       time: 12,
-    //     });
-    // }
     const taskName= ref('null');
     const taskTime= ref('');
   function newTaskModal(x,y){
@@ -38,42 +26,26 @@ import { ref } from 'vue';
 <template>
 
     <div>
-        <h2>Task List </h2>
+        <h2 class="text-green-600 p-4 text-2xl">Task List </h2>
         <Ul>
             <li v-for="(task,index) in tasks" :key="index">{{ task.name }} - {{ task.time }} minutes
-            <button @click="removeTask(index)"> remove Task</button>
+            <button @click="removeTask(index)"> Remove Task</button>
             </li>
         </Ul>
-        <!-- <button @click="showPop()">Add Task</button> -->
+       
     </div>
     
 
 
 
-    <!-- <button @click="showAddTaskPopup">Add Task</button> -->
+  
 
-<!-- Add Task Popup -->
-<!-- <div>
-<div v-if="isAddTaskPopupVisible" class="popup">
-  <h2>Add Task</h2>
-  <form>
-    <label>
-      Task Name:
-      <input  required />
-    </label>
-    <label>
-      Time (minutes):
-      <input type="number"  required />
-    </label>
-    <button type="submit">Add Task</button>
-  </form>
-  <button @click="closeAddTaskPopup">Close</button>
+
+<div class="flex items-center justify-center mt-6">
+  <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" type="button" class="bg-blue-500 text-white font-bold py-2 px-4 rounded">
+    Add Task
+  </button>
 </div>
-</div> -->
-
-<button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
- Add Task
-</button>
 
 <!-- Main modal -->
 <div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -120,7 +92,7 @@ import { ref } from 'vue';
                 </div>
                 <button @click.prevent="newTaskModal(name,time)" type="button" data-modal-hide="crud-modal" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-                    Add new Task
+                    Add New Task
                 </button>
             </form>
         </div>
