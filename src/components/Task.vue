@@ -28,8 +28,9 @@ import { ref } from 'vue';
     <div>
         <h2 class="text-green-600 p-4 text-2xl">Task List </h2>
         <Ul>
-            <li v-for="(task,index) in tasks" :key="index">{{ task.name }} - {{ task.time }} minutes
-            <button @click="removeTask(index)"> Remove Task</button>
+            <li class="" v-for="(task,index) in tasks" :key="index">{{ task.name }} - {{ task.time }} minutes
+            <button  @click="removeTask(index)" class="text-white bg-blue-400 hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ml-5 mr-2" type="button"> Remove</button>
+            
             </li>
         </Ul>
        
@@ -40,7 +41,9 @@ import { ref } from 'vue';
 
   
 
-
+<!-- <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="block text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-4" type="button">
+ Add Task
+</button> -->
 <div class="flex items-center justify-center mt-6">
   <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" type="button" class="bg-blue-500 text-white font-bold py-2 px-4 rounded">
     Add Task
